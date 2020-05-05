@@ -1,7 +1,8 @@
 <template>
   <div id="app" @paste="onAppPaste">
     <img alt="Vue logo" src="./assets/drawing.svg">
-    <HelloWorld/>
+    <HelloWorld v-if="showInitialInfo"/>
+    <div v-else>Yayyy</div>
     <p v-if="errorMessageToShow">
       {{ errorMessageToShow }}
     </p>
@@ -37,6 +38,10 @@ export default class App extends Vue {
   }
 
   findColors = (pastedText: string): string[] => Array.from(pastedText.matchAll(/#[0-9a-fA-F]{6}/g), (m) => m[0]);
+
+  get showInitialInfo() {
+    return !this.colors.length;
+  }
 }
 </script>
 
