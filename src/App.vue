@@ -15,11 +15,20 @@ import HelloWorld from './components/HelloWorld.vue';
   },
 })
 export default class App extends Vue {
+  private colors: string[] = [];
+
   onAppPaste = (pastedContent: ClipboardEvent) => {
+    let str = '';
+
     if (pastedContent.clipboardData) {
-      console.log(pastedContent.clipboardData.getData('text'));
+      str = pastedContent.clipboardData.getData('text');
     }
+
+    this.colors = this.findColors(str);
+    console.log(this.colors);
   }
+
+  findColors = (pastedText: string): string[] => Array.from(pastedText.matchAll(/#[0-9a-fA-F]{6}/g), (m) => m[0]);
 }
 </script>
 
