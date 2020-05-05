@@ -1,7 +1,7 @@
 <template>
   <div id="app" @paste="onAppPaste">
     <img alt="Vue logo" src="./assets/drawing.svg">
-    <HelloWorld v-if="showInitialInfo"/>
+    <InitialInfo v-if="showInitialInfo"/>
     <div v-else>Yayyy</div>
     <p v-if="errorMessageToShow">
       {{ errorMessageToShow }}
@@ -11,11 +11,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import InitialInfo from './components/InitialInfo.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    InitialInfo,
   },
 })
 export default class App extends Vue {

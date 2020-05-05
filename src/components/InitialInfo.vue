@@ -16,7 +16,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class HelloWorld extends Vue {
+export default class InitialInfo extends Vue {
   private sample_palette = [
     '#FF0000',
     '#00FF00',
