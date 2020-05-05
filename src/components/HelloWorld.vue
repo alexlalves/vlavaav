@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>Welcome to VLAVAAV!</h1>
     <p>
-      VLAVAAV is a no-nonesense color palette vizualization tool.
+      VLAVAAV is a no-nonsense color palette vizualization tool.
       Just paste your color codes to the browser to see them!
     </p>
     <p>
