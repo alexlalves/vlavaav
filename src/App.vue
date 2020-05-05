@@ -2,6 +2,9 @@
   <div id="app" @paste="onAppPaste">
     <img alt="Vue logo" src="./assets/drawing.svg">
     <HelloWorld/>
+    <p v-if="errorMessageToShow">
+      {{ errorMessageToShow }}
+    </p>
   </div>
 </template>
 
@@ -17,15 +20,20 @@ import HelloWorld from './components/HelloWorld.vue';
 export default class App extends Vue {
   private colors: string[] = [];
 
-  onAppPaste = (pastedContent: ClipboardEvent) => {
+  private errorMessageToShow = '';
+
+  public onAppPaste(pastedContent: ClipboardEvent) {
     let str = '';
 
     if (pastedContent.clipboardData) {
       str = pastedContent.clipboardData.getData('text');
+      this.errorMessageToShow = '';
+    } else {
+      this.errorMessageToShow = 'Clipboard is empty, nothing was pasted!';
     }
 
     this.colors = this.findColors(str);
-    console.log(this.colors);
+    if (!this.colors.length) this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the pasted text.';
   }
 
   findColors = (pastedText: string): string[] => Array.from(pastedText.matchAll(/#[0-9a-fA-F]{6}/g), (m) => m[0]);
