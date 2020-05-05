@@ -1,5 +1,6 @@
 <template>
   <div id="app" @paste="onAppPaste">
+    <img alt="Vue logo" src="./assets/drawing.svg">
     <HelloWorld/>
   </div>
 </template>
@@ -31,7 +32,12 @@ export default class App extends Vue {
   align-items: center;
   background-color: #424242;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100vh;
+}
+
+img {
+  height: 120px;
 }
 </style>
