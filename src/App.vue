@@ -1,8 +1,12 @@
 <template>
   <div id="app" @paste="onAppPaste">
-    <img alt="Vue logo" src="./assets/drawing.svg">
-    <InitialInfo v-if="showInitialInfo"/>
-    <div v-else>Yayyy</div>
+    <template v-if="showInitialInfo">
+      <InitialInfo v-if="showInitialInfo"/>
+    </template>
+    <ShowColors
+      v-else
+      :colors="colors"
+    />
     <p v-if="errorMessageToShow">
       {{ errorMessageToShow }}
     </p>
@@ -12,10 +16,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import InitialInfo from './components/InitialInfo.vue';
+import ShowColors from './components/ShowColors.vue';
 
 @Component({
   components: {
     InitialInfo,
+    ShowColors,
   },
 })
 export default class App extends Vue {
@@ -33,7 +39,7 @@ export default class App extends Vue {
       this.errorMessageToShow = 'Clipboard is empty, nothing was pasted!';
     }
 
-    this.colors = this.findColors(str);
+    this.colors = [...new Set(this.findColors(str))];
     if (!this.colors.length) this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the pasted text.';
   }
 

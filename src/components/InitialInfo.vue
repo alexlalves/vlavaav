@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <img alt="Vue logo" src="./../assets/drawing.svg">
     <h1>Welcome to VLAVAAV!</h1>
     <p>
       VLAVAAV is a no-nonsense color palette vizualization tool.
