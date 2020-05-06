@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="206" height="46">
+  <defs>
+    <radialGradient xlink:href="#a" id="h" cx="77.391" cy="105.172" fx="77.391" fy="105.172" r="27.252" gradientTransform="matrix(3.77953 0 0 .47703 -139.361 64.562)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#b" id="i" cx="56.885" cy="107.818" fx="56.885" fy="107.818" r="4.134" gradientTransform="matrix(3.77953 0 0 5.56407 -139.361 -475.173)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#c" id="j" cx="72.76" cy="107.818" fx="72.76" fy="107.818" r="4.134" gradientTransform="matrix(-3.77953 0 0 -5.56407 440.638 724.637)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#d" id="k" cx="96.573" cy="107.818" fx="96.573" fy="107.818" r="4.134" gradientTransform="matrix(3.77953 0 0 5.56406 -139.361 -475.172)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#e" id="l" cx="64.823" cy="107.818" fx="64.823" fy="107.818" r="4.134" gradientTransform="matrix(3.77953 0 0 5.56407 -139.361 -475.173)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#f" id="m" cx="80.698" cy="107.818" fx="80.698" fy="107.818" r="4.134" gradientTransform="matrix(-3.77953 0 0 -5.56407 440.638 724.638)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#g" id="n" cx="88.635" cy="107.818" fx="88.635" fy="107.818" r="4.134" gradientTransform="matrix(3.77953 0 0 5.56407 -139.361 -475.173)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="g">
+      <stop offset="0" stop-color="#80f"/>
+      <stop offset="1" stop-color="#80f" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="f">
+      <stop offset="0" stop-color="#0f0"/>
+      <stop offset="1" stop-color="#0f0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="e">
+      <stop offset="0" stop-color="#ff0"/>
+      <stop offset="1" stop-color="#ff0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="d">
+      <stop offset="0" stop-color="#f0f"/>
+      <stop offset="1" stop-color="#f0f" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="c">
+      <stop offset="0" stop-color="#00f"/>
+      <stop offset="1" stop-color="#00f" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="b">
+      <stop offset="0" stop-color="red"/>
+      <stop offset="1" stop-color="red" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="a">
+      <stop offset="0" stop-color="#f80"/>
+      <stop offset="1" stop-color="#f80" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M10.5.5l3.334 15H.5v10h15.555l4.445 20h5l-2.223-20h4.446l-2.223 20h5l4.445-20h10l-4.445 20h10l2.223-20h5.554l2.223 20h10l-4.445-20h10.002l4.443 20h5l-2.223-20h4.446l-2.223 20h5l4.445-20h10l-4.445 20h10l2.223-20h5.554l2.223 20h10l-4.445-20h8.89l-4.445 20h10l2.223-20h5.554l2.223 20h10l-4.445-20h10l4.445 20h5l-2.223-20h4.446l-2.223 20h5l4.445-20H205.5V.5h-10v15h-8.334L190.5.5h-10l-1.666 15h-6.668L170.5.5h-10l3.334 15h-10L150.5.5h-5l1.666 15h-3.332L145.5.5h-5l-3.334 15h-13.332L120.5.5h-5l1.666 15h-3.332L115.5.5h-5l-3.334 15h-10L100.5.5h-10l-1.666 15h-6.668L80.5.5h-9.998l3.332 15h-10L60.5.5h-5l1.666 15h-3.332L55.5.5h-5l-3.334 15h-10L40.5.5h-10l-1.666 15h-6.668L20.5.5z" fill="#fff"/>
+  <path d="M50.639 117.232v10h205v-25h-10v15z" fill="url(#h)" stroke="#000" transform="translate(-50.139 -101.732)"/>
+  <path d="M70.639 102.232h-10l10 45h10l10-45h-10l-5 45z" fill="url(#i)" stroke="#000" transform="translate(-50.139 -101.732)"/>
+  <path d="M170.639 147.232h10l-10-45h-10l-10 45h10l5-45z" fill="url(#j)" stroke="#000" transform="translate(-50.139 -101.732)"/>
+  <path d="M220.639 102.232h-10l10 45h10l10-45h-10l-5 45z" fill="url(#k)" stroke="#000" transform="translate(-50.139 -101.732)"/>
+  <path d="M110.639 147.232h10l-10-45h-10l-10 45h10l5-45z" fill="url(#l)" stroke="#000" transform="translate(-50.139 -101.732)"/>
+  <path d="M130.639 102.232h-10l10 45h10l10-45h-10l-5 45z" fill="url(#m)" stroke="#000" transform="translate(-50.139 -101.732)"/>
+  <path d="M200.639 147.232h10l-10-45h-10l-10 45h10l5-45z" fill="url(#n)" stroke="#000" transform="translate(-50.139 -101.732)"/>
+</svg>
