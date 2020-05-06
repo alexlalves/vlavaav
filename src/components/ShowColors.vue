@@ -11,9 +11,11 @@
         @click="copyToClipboard(color)"
         class="show-colors__cell"
       >
-        <div class="show-colors__cell-description">
-          {{ color }}
-          <br>
+        <div class="show-colors__cell-description-box">
+          <code class="show-colors__cell-description">
+            {{ color }}
+            <br>
+          </code>
         </div>
       </div>
     </div>
@@ -58,19 +60,22 @@ export default class ShowColors extends Vue {
   align-items: flex-end;
   cursor: pointer;
   display: flex;
-  font-size: larger;
   justify-content: center;
-  overflow: hidden;
 
-  &:hover  ::after {
+  &:hover .show-colors__cell-description:after {
     content: '(click to copy)';
   }
 }
 
-.show-colors__cell-description {
+.show-colors__cell-description-box {
   background-color: rgba(12, 12, 12, 0.8);
+  font-size: larger;
   padding: .5em;
   width: 100%;
+}
+
+.show-colors__cell-description {
+  font-size: larger;
 }
 
 .show-colors__footer {
