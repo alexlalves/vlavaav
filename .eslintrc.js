@@ -14,7 +14,8 @@ module.exports = {
   rules: {
     'no-console': 'warn',
     'no-debugger': 'warn',
-    "class-methods-use-this": 'off',
+    'class-methods-use-this': 'off',
+    'arrow-parens': ['error', 'as-needed']
   },
   overrides: [
     {
@@ -26,5 +27,11 @@ module.exports = {
         jest: true,
       },
     },
+    {
+      files: ['*.vue'],
+      rules: {
+        'max-len': 'off'
+      }
+    }
   ],
 };
