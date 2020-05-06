@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InitialInfo matches snapshot 1`] = `
+<div>
+  <div
+    class="show-colors"
+    style="grid-template-columns: repeat(2, 1fr);"
+  >
+    <div
+      class="show-colors__cell"
+      style="background-color: white; flex-grow: 1;"
+    >
+      <div
+        class="show-colors__cell-description-box"
+      >
+        <code
+          class="show-colors__cell-description"
+        >
+          
+          white
+          
+          <br />
+        </code>
+      </div>
+    </div>
+    <div
+      class="show-colors__cell"
+      style="background-color: yellow; flex-grow: 1;"
+    >
+      <div
+        class="show-colors__cell-description-box"
+      >
+        <code
+          class="show-colors__cell-description"
+        >
+          
+          yellow
+          
+          <br />
+        </code>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="show-colors__footer"
+  >
+    <a
+      class="show-colors__footer-link"
+      href="."
+    >
+      Click here
+    </a>
+    
+    to paste a new set of colors.
+    
+    <strong>
+      VLAVAAV
+    </strong>
+     © Alex L. Alves 2020.
+  
+  </div>
+</div>
+`;
