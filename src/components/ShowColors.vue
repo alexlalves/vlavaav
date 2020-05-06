@@ -19,6 +19,15 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class ShowColors extends Vue {
   @Prop({ required: false, type: Array, default: () => [] }) readonly colors!: string[]
+
+  get numberOfColumns() {
+    const numberOfColors = this.colors.length;
+
+    const squareRoot = Math.floor(Math.sqrt(numberOfColors));
+    const isSquare = squareRoot * squareRoot === numberOfColors;
+
+    return isSquare ? squareRoot : squareRoot + 1;
+  }
 }
 </script>
 
