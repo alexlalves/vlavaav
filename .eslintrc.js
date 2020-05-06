@@ -15,7 +15,7 @@ module.exports = {
     'no-console': 'warn',
     'no-debugger': 'warn',
     'class-methods-use-this': 'off',
-    'arrow-parens': ['error', 'as-needed']
+    'arrow-parens': ['error', 'as-needed'],
   },
   overrides: [
     {
@@ -30,8 +30,8 @@ module.exports = {
     {
       files: ['*.vue'],
       rules: {
-        'max-len': 'off'
-      }
-    }
+        'max-len': 'off',
+      },
+    },
   ],
 };
