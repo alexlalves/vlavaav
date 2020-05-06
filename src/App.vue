@@ -43,7 +43,9 @@ export default class App extends Vue {
     if (!this.colors.length) this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the pasted text.';
   }
 
-  findColors = (pastedText: string): string[] => Array.from(pastedText.matchAll(/#[0-9a-fA-F]{6}/g), (m) => m[0]);
+  public findColors(pastedText: string): string[] {
+    return Array.from(pastedText.matchAll(/#[0-9a-fA-F]{6}/g), (m) => m[0]);
+  }
 
   get showInitialInfo() {
     return !this.colors.length;
