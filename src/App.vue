@@ -15,8 +15,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import InitialInfo from './components/InitialInfo.vue';
-import ShowColors from './components/ShowColors.vue';
+import InitialInfo from '@/components/InitialInfo.vue';
+import ShowColors from '@/components/ShowColors.vue';
 
 @Component({
   components: {
@@ -39,13 +39,15 @@ export default class App extends Vue {
       this.errorMessageToShow = 'Clipboard is empty, nothing was pasted!';
     }
 
-    this.colors = [...new Set(this.findColors(str))];
+    this.colors = this.findColors(str);
     if (!this.colors.length) this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the pasted text.';
   }
 
   public findColors(pastedText: string): string[] {
-    const colors = Array.from(pastedText.matchAll(/#[0-9a-fA-F]{6}/g), m => m[0]);
-    return colors.map(color => color.toLowerCase());
+    const colors = pastedText.match(/#[0-9a-fA-F]{6}/g) || [];
+    return [...new Set(
+      colors.map(color => color.toLowerCase()),
+    )];
   }
 
   get showInitialInfo() {
