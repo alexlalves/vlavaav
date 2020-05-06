@@ -44,7 +44,8 @@ export default class App extends Vue {
   }
 
   public findColors(pastedText: string): string[] {
-    return Array.from(pastedText.matchAll(/#[0-9a-fA-F]{6}/g), (m) => m[0]);
+    const colors = Array.from(pastedText.matchAll(/#[0-9a-fA-F]{6}/g), m => m[0]);
+    return colors.map(color => color.toLowerCase());
   }
 
   get showInitialInfo() {
