@@ -13,7 +13,7 @@ describe('App', () => {
     describe('when text with no color is passed', () => {
       it('returns an empty list', () => {
         expect(
-          wrapper.vm.findColors('Color: white :(')
+          wrapper.vm.findColors('Color: white :('),
         ).toEqual([]);
       });
     });
@@ -21,7 +21,7 @@ describe('App', () => {
     describe('when an uppercase color is passed', () => {
       it('returns that color', () => {
         expect(
-          wrapper.vm.findColors('Color: #FF00FF')
+          wrapper.vm.findColors('Color: #FF00FF'),
         ).toContain('#ff00ff');
       });
     });
@@ -44,5 +44,4 @@ describe('App', () => {
       });
     });
   });
-
 });

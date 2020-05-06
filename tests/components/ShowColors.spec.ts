@@ -8,8 +8,9 @@ describe('InitialInfo', () => {
     ShowColors, {
       propsData: {
         colors: get('colors'),
+      },
     },
-  });
+  );
 
   it('matches snapshot', () => {
     expect(wrapper().element).toMatchSnapshot();
