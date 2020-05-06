@@ -56,19 +56,14 @@ export default class App extends Vue {
 
 <style lang="scss">
 #app {
-  font-family: Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #FFFFFF;
-
   align-items: center;
-  background-color: #424242;
+  background-color: #181818;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
+  font-family: Helvetica, Arial, sans-serif;
   justify-content: center;
-  height: 100vh;
-}
-
-img {
-  height: 120px;
+  min-height: 100vh;
+  text-align: center;
 }
 </style>
