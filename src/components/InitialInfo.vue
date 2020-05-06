@@ -29,9 +29,9 @@
     </p>
 
     <p class="initial-info__paragraph initial-info__paragraph--no-justify">
-      © Alex L. Alves 2020.
+      <strong>VLAVAAV</strong> © Alex L. Alves 2020.
       <br/>
-      Check out VLAVAAV on GitHub:
+      Check the project out on GitHub:
       <a
         class="initial-info__link"
         href="https://github.com/Magmagan/vlavaav"
@@ -48,13 +48,13 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class InitialInfo extends Vue {
   private sample_palette = [
-    'V: #FF0000,',
-    'L: #FF8800,',
-    'A: #FFFF00,',
-    'V: #00FF00,',
-    'A: #0000FF,',
-    'A: #8800FF,',
-    'V: #FF00FF,',
+    'V: #ff0000,',
+    'L: #ff8800,',
+    'A: #ffff00,',
+    'V: #00ff00,',
+    'A: #0000ff,',
+    'A: #8800ff,',
+    'V: #ff00ff,',
   ].join('\n');
 }
 </script>
@@ -90,5 +90,9 @@ export default class InitialInfo extends Vue {
 
 .initial-info__link {
   color: #FFFFFF;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 </style>
