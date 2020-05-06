@@ -3,7 +3,7 @@
     <img
       class="initial-info__logo"
       alt="VLAVAAV logo"
-      src="./../assets/drawing.svg"
+      src="@/assets/drawing.svg"
     >
 
     <h1 class="initial-info__header">
