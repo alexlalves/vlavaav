@@ -7,7 +7,7 @@ exports[`InitialInfo matches snapshot 1`] = `
   <img
     alt="VLAVAAV logo"
     class="initial-info__logo"
-    src="@/assets/drawing.svg"
+    src="@/assets/logo.svg"
   />
    
   <h1
