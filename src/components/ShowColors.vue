@@ -18,6 +18,18 @@
           </code>
         </div>
       </div>
+
+      <div
+        @click="copyLinkToClipboard()"
+        class="show-colors__cell"
+      >
+        <div class="show-colors__cell-description-box">
+          <code class="show-colors__cell-description">
+            Share this palette
+            <br>
+          </code>
+        </div>
+      </div>
     </div>
     <div class="show-colors__footer">
       <router-link :to="{name: 'Home'}" class="show-colors__footer-link">Click here</router-link>
@@ -41,16 +53,20 @@ export default class ShowColors extends Vue {
   }
 
   get numberOfColumns() {
-    const numberOfColors = this.colors.length;
+    const numberOfCells = this.colors.length + 1;
 
-    const squareRoot = Math.floor(Math.sqrt(numberOfColors));
-    const isSquare = squareRoot * squareRoot === numberOfColors;
+    const squareRoot = Math.floor(Math.sqrt(numberOfCells));
+    const isSquare = squareRoot * squareRoot === numberOfCells;
 
     return isSquare ? squareRoot : squareRoot + 1;
   }
 
-  public copyToClipboard(color: string) {
-    navigator.clipboard.writeText(color);
+  public copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text);
+  }
+
+  public copyLinkToClipboard() {
+    this.copyToClipboard(document.URL);
   }
 }
 </script>
