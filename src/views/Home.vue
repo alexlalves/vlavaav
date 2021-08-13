@@ -1,12 +1,6 @@
 <template>
   <div id="app" @paste="onAppPaste">
-    <template v-if="showInitialInfo">
-      <InitialInfo v-if="showInitialInfo"/>
-    </template>
-    <ShowColors
-      v-else
-      :commaSeparatedColors="colors"
-    />
+    <InitialInfo/>
     <p v-if="errorMessageToShow">
       {{ errorMessageToShow }}
     </p>
@@ -40,7 +34,11 @@ export default class App extends Vue {
     }
 
     this.colors = this.findColors(str);
-    if (!this.colors.length) this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the pasted text.';
+    if (this.colors.length) {
+      this.$router.push({ name: 'Palette', params: { colors: this.colors } });
+    } else {
+      this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the pasted text.';
+    }
   }
 
   public findColors(pastedText: string): string {
@@ -49,10 +47,6 @@ export default class App extends Vue {
     return [...new Set(
       colors.map(color => color.toLowerCase().replace('#', '')),
     )].join(',');
-  }
-
-  get showInitialInfo() {
-    return !this.colors.length;
   }
 }
 </script>
