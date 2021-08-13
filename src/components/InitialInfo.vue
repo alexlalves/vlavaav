@@ -29,7 +29,7 @@
     </p>
 
     <p class="initial-info__paragraph initial-info__paragraph--no-justify">
-      <strong>VLAVAAV</strong> © Alex L. Alves 2020.
+      <strong>VLAVAAV</strong> © Alex L. Alves 2021.
       <br/>
       Check the project out on GitHub:
       <a

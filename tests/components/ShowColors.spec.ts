@@ -2,13 +2,14 @@ import { shallowMount } from '@vue/test-utils';
 import ShowColors from '@/components/ShowColors.vue';
 
 describe('InitialInfo', () => {
-  def('colors', () => ['white', 'yellow']);
+  def('colors', () => 'FFF,FF0');
 
   const wrapper = () => shallowMount(
     ShowColors, {
       propsData: {
-        colors: get('colors'),
+        commaSeparatedColors: get('colors'),
       },
+      stubs: ['router-link'],
     },
   );
 
@@ -17,23 +18,22 @@ describe('InitialInfo', () => {
   });
 
   describe('numberOfColumns', () => {
-    describe('when the number of colors is a perfect square', () => {
+    describe('when the number of colors is almost a perfect square', () => {
       def('colors', () => [
         'white', 'yellow',
-        'blue', 'green',
-      ]);
+        'blue',
+      ].join(','));
 
-      it('retuns the exact amount of columns needed', () => {
+      it('leaves space for the copy link', () => {
         expect(wrapper().vm.numberOfColumns).toEqual(2);
       });
     });
 
-    describe('when the number of colors is bigger than a perfect square', () => {
+    describe('when the number of colors is bigger than a perfect square - 1', () => {
       def('colors', () => [
         'white', 'yellow',
         'blue', 'green',
-        'orange',
-      ]);
+      ].join(','));
 
       it('retuns an extra column', () => {
         expect(wrapper().vm.numberOfColumns).toEqual(3);
