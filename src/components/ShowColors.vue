@@ -34,7 +34,7 @@
     <div class="show-colors__footer">
       <router-link :to="{name: 'Home'}" class="show-colors__footer-link">Click here</router-link>
       to paste a new set of colors.
-      <strong>VLAVAAV</strong> © Alex L. Alves 2020.
+      <strong>VLAVAAV</strong> © Alex L. Alves 2021.
     </div>
   </div>
 </template>
