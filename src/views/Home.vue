@@ -1,5 +1,5 @@
 <template>
-  <div class="home" @paste="onAppPaste">
+  <div @paste="onAppPaste">
     <InitialInfo/>
     <p v-if="errorMessageToShow">
       {{ errorMessageToShow }}
@@ -50,17 +50,3 @@ export default class App extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.home {
-  align-items: center;
-  background-color: #181818;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  font-family: Helvetica, Arial, sans-serif;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center;
-}
-</style>
