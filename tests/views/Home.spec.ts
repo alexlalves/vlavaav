@@ -1,8 +1,16 @@
 import { shallowMount } from '@vue/test-utils';
 import Home from '@/views/Home.vue';
 
+const push = jest.fn();
+
 describe('Home', () => {
-  const wrapper = () => shallowMount(Home);
+  const wrapper = () => shallowMount(Home, {
+    mocks: {
+      $router: {
+        push,
+      },
+    },
+  });
 
   it('matches snapshot', () => {
     expect(wrapper().element).toMatchSnapshot();
@@ -40,6 +48,20 @@ describe('Home', () => {
           const colors = wrapper().vm.findColors('ColorA: #FF00FF #ff00ff');
           expect(colors).toEqual('ff00ff');
         });
+      });
+    });
+  });
+
+  describe('when pasting colors', () => {
+    beforeEach(() => {
+      wrapper().vm.onAppPaste(
+        { clipboardData: { getData: () => '#ff00ff' } } as unknown as ClipboardEvent,
+      );
+    });
+
+    it('accesses the Palette view with the correct colors', () => {
+      expect(push).toBeCalledWith({
+        name: 'Palette', params: { colors: 'ff00ff' },
       });
     });
   });
