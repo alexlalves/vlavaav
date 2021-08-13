@@ -8,7 +8,7 @@ exports[`InitialInfo matches snapshot 1`] = `
   >
     <div
       class="show-colors__cell"
-      style="background-color: white; flex-grow: 1;"
+      style="background-color: rgb(255, 255, 255); flex-grow: 1;"
     >
       <div
         class="show-colors__cell-description-box"
@@ -17,7 +17,7 @@ exports[`InitialInfo matches snapshot 1`] = `
           class="show-colors__cell-description"
         >
           
-          white
+          FFF
           
           <br />
         </code>
@@ -25,7 +25,7 @@ exports[`InitialInfo matches snapshot 1`] = `
     </div>
     <div
       class="show-colors__cell"
-      style="background-color: yellow; flex-grow: 1;"
+      style="background-color: rgb(255, 255, 0); flex-grow: 1;"
     >
       <div
         class="show-colors__cell-description-box"
@@ -34,7 +34,24 @@ exports[`InitialInfo matches snapshot 1`] = `
           class="show-colors__cell-description"
         >
           
-          yellow
+          FF0
+          
+          <br />
+        </code>
+      </div>
+    </div>
+     
+    <div
+      class="show-colors__cell"
+    >
+      <div
+        class="show-colors__cell-description-box"
+      >
+        <code
+          class="show-colors__cell-description"
+        >
+          
+          Share this palette
           
           <br />
         </code>
@@ -45,19 +62,19 @@ exports[`InitialInfo matches snapshot 1`] = `
   <div
     class="show-colors__footer"
   >
-    <a
+    <router-link-stub
       class="show-colors__footer-link"
-      href="."
+      to="[object Object]"
     >
       Click here
-    </a>
+    </router-link-stub>
     
     to paste a new set of colors.
     
     <strong>
       VLAVAAV
     </strong>
-     © Alex L. Alves 2020.
+     © Alex L. Alves 2021.
   
   </div>
 </div>
