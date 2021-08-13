@@ -13,7 +13,7 @@ import ShowColors from '@/components/ShowColors.vue';
     ShowColors,
   },
 })
-export default class App extends Vue {
+export default class Palette extends Vue {
   @Prop({ type: String, default: '' }) readonly colors!: string
 }
 </script>

@@ -11,5 +11,5 @@ import InitialInfo from '@/components/InitialInfo.vue';
     InitialInfo,
   },
 })
-export default class App extends Vue { }
+export default class About extends Vue { }
 </script>

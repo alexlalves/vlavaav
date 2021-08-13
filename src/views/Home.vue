@@ -18,7 +18,7 @@ import ShowColors from '@/components/ShowColors.vue';
     ShowColors,
   },
 })
-export default class App extends Vue {
+export default class Home extends Vue {
   private colors = '';
 
   private errorMessageToShow = '';
