@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="show-colors__footer">
-      <a href="." class="show-colors__footer-link">Click here</a>
+      <router-link :to="{name: 'Home'}" class="show-colors__footer-link">Click here</router-link>
       to paste a new set of colors.
       <strong>VLAVAAV</strong> © Alex L. Alves 2020.
     </div>
