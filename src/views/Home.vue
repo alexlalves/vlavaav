@@ -5,7 +5,7 @@
     </template>
     <ShowColors
       v-else
-      :colors="colors"
+      :commaSeparatedColors="colors"
     />
     <p v-if="errorMessageToShow">
       {{ errorMessageToShow }}
@@ -25,7 +25,7 @@ import ShowColors from '@/components/ShowColors.vue';
   },
 })
 export default class App extends Vue {
-  private colors: string[] = [];
+  private colors = '';
 
   private errorMessageToShow = '';
 
@@ -43,11 +43,12 @@ export default class App extends Vue {
     if (!this.colors.length) this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the pasted text.';
   }
 
-  public findColors(pastedText: string): string[] {
-    const colors = pastedText.match(/#[0-9a-fA-F]{6}/g) || [];
+  public findColors(pastedText: string): string {
+    const colors = pastedText.match(/(?:#)[0-9a-fA-F]{6}/g) || [];
+
     return [...new Set(
-      colors.map(color => color.toLowerCase()),
-    )];
+      colors.map(color => color.toLowerCase().replace('#', '')),
+    )].join(',');
   }
 
   get showInitialInfo() {

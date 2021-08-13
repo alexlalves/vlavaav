@@ -7,7 +7,7 @@
       <div
         v-for="color in colors"
         :key="color"
-        :style="`background-color: ${color}; flex-grow: 1`"
+        :style="`background-color: #${color}; flex-grow: 1`"
         @click="copyToClipboard(color)"
         class="show-colors__cell"
       >
@@ -32,7 +32,13 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class ShowColors extends Vue {
-  @Prop({ required: false, type: Array, default: () => [] }) readonly colors!: string[]
+  @Prop(
+    { required: false, type: String, default: () => '' },
+  ) readonly commaSeparatedColors!: string
+
+  get colors() {
+    return this.commaSeparatedColors.split(',');
+  }
 
   get numberOfColumns() {
     const numberOfColors = this.colors.length;
