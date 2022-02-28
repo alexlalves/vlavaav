@@ -67,10 +67,10 @@ export default class InitialInfo extends Vue { }
   }
 
   & > * {
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 
-    @media (min-width: 480px) {
-      margin-bottom: 32px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
@@ -107,6 +107,7 @@ export default class InitialInfo extends Vue { }
 
 .initial-info__link {
   color: #FFFFFF;
+  display:inline-block;
 
   &:hover {
     text-decoration: none;
