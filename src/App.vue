@@ -12,7 +12,6 @@
   display: flex;
   flex-direction: column;
   font-family: Helvetica, Arial, sans-serif;
-  justify-content: center;
   min-height: 100vh;
   text-align: center;
 }

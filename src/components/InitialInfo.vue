@@ -61,10 +61,18 @@ export default class InitialInfo extends Vue {
 
 <style scoped lang="scss">
 .initial-info {
-  margin: 32px 16px; 
+  margin: 32px 16px;
 
   @media (min-width: 480px) {
     max-width: 600px;
+  }
+
+  & > * {
+    margin-bottom: 16px;
+
+    @media (min-width: 480px) {
+      margin-bottom: 32px;
+    }
   }
 }
 
@@ -73,12 +81,18 @@ export default class InitialInfo extends Vue {
 }
 
 .initial-info__header {
+  font-size: 1.5em;
   line-height: 1.25em;
+  margin-top: 0;
+
+  @media (min-width: 480px) {
+    font-size: 2em;
+  }
 }
 
 .initial-info__paragraph {
   line-height: 1.5em;
-  margin: 2em 0;
+  margin-top: 0px;
   text-align: justify;
 
   &--no-justify {
