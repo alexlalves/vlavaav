@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorsForm matches snapshot 1`] = `
+<form>
+  <!---->
+   
+  <textarea
+    class="colors-form__input-area"
+    placeholder="Paste here or just click 'Generate'
+and see these colors in action:
+
+V: #ff0000,
+L: #ff8800,
+A: #ffff00,
+V: #00ff00,
+A: #0000ff,
+A: #8800ff,
+V: #ff00ff."
+  />
+   
+  <button
+    class="colors-form__submit-button"
+    type="submit"
+  >
+    
+    Generate
+  
+  </button>
+</form>
+`;
