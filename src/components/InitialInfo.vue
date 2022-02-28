@@ -10,6 +10,10 @@
       <strong>VLAVAAV</strong> is a no-nonsense palette visualization tool.
     </h1>
 
+    <ColorsForm/>
+
+    <hr/>
+
     <p class="initial-info__paragraph">
       Tired of approaching webpages, specifications, and themes without having a practical way to visualize all their colors at once?
     </p>
@@ -21,11 +25,6 @@
 
     <p class="initial-info__paragraph">
       <em>Paste anywhere</em> (<kbd>Ctrl + V</kbd>) in the browser for a view of all the colors in the clipboard!
-    </p>
-
-    <p class="initial-info__paragraph initial-info__paragraph--no-justify">
-      Copy and try these colors out:
-      <pre class="initial-info__code">{{ sample_palette }}</pre>
     </p>
 
     <p class="initial-info__paragraph initial-info__paragraph--no-justify">
@@ -44,19 +43,14 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import ColorsForm from '@/components/ColorsForm.vue';
 
-@Component
-export default class InitialInfo extends Vue {
-  private sample_palette = [
-    'V: #ff0000,',
-    'L: #ff8800,',
-    'A: #ffff00,',
-    'V: #00ff00,',
-    'A: #0000ff,',
-    'A: #8800ff,',
-    'V: #ff00ff,',
-  ].join('\n');
-}
+@Component({
+  components: {
+    ColorsForm,
+  },
+})
+export default class InitialInfo extends Vue { }
 </script>
 
 <style scoped lang="scss">
@@ -98,11 +92,6 @@ export default class InitialInfo extends Vue {
   &--no-justify {
     text-align: unset;
   }
-}
-
-.initial-info__code {
-  background-color: #111111;
-  padding: 1em 0;
 }
 
 .initial-info__link {
