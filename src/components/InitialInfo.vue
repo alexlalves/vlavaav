@@ -14,6 +14,10 @@
 
     <hr/>
 
+    <h2 class="initial-info__subheader">
+      What is <strong>VLAVAAV</strong>?
+    </h2>
+
     <p class="initial-info__paragraph">
       Tired of approaching webpages, specifications, and themes without having a practical way to visualize all their colors at once?
     </p>
@@ -24,11 +28,12 @@
     </p>
 
     <p class="initial-info__paragraph">
-      <em>Paste anywhere</em> (<kbd>Ctrl + V</kbd>) in the browser for a view of all the colors in the clipboard!
+      Simply paste your text with hexadecimal color codes above to generate your palette, and <strong>VLAVAAV</strong> will generate an easy-to-read, easy-to-copy view of all your colors.
+      Then bookmark your palette for later and share it among your colleagues.
     </p>
 
     <p class="initial-info__paragraph initial-info__paragraph--no-justify">
-      <strong>VLAVAAV</strong> © Alex L. Alves 2021.
+      <strong>VLAVAAV</strong> © Alex L. Alves 2022.
       <br/>
       Check the project out on GitHub:
       <a
@@ -82,6 +87,12 @@ export default class InitialInfo extends Vue { }
   @media (min-width: 480px) {
     font-size: 2em;
   }
+}
+
+.initial-info__subheader {
+  font-size: 1.25em;
+  line-height: 1.25em;
+  margin-top: 0;
 }
 
 .initial-info__paragraph {
