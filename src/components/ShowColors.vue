@@ -38,15 +38,6 @@ export default class ShowColors extends Vue {
     return this.commaSeparatedColors.split(',');
   }
 
-  get numberOfColumns() {
-    const numberOfCells = this.colors.length + 1;
-
-    const squareRoot = Math.floor(Math.sqrt(numberOfCells));
-    const isSquare = squareRoot * squareRoot === numberOfCells;
-
-    return isSquare ? squareRoot : squareRoot + 1;
-  }
-
   public copyToClipboard(text: string) {
     navigator.clipboard.writeText(text);
   }

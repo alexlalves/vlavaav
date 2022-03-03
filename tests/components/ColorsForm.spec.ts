@@ -66,7 +66,7 @@ describe('ColorsForm', () => {
     });
 
     describe('when no user input has been provided', () => {
-      def('userInput', () => "");
+      def('userInput', () => '');
 
       it('accesses the Palette view with the default colors', () => {
         expect(push).toBeCalledWith({
@@ -76,7 +76,7 @@ describe('ColorsForm', () => {
     });
 
     describe('when user input has no colors provided', () => {
-      def('userInput', () => "Just a normal sentence");
+      def('userInput', () => 'Just a normal sentence');
 
       it('shows an error message', () => {
         expect(get('wrapper').vm.$data.pastedInfo).not.toBeFalsy();
@@ -85,7 +85,7 @@ describe('ColorsForm', () => {
     });
 
     describe('when user input provides colors', () => {
-      def('userInput', () => "A color: #abcdef");
+      def('userInput', () => 'A color: #abcdef');
 
       it('accesses the Palette view with the provided colors', () => {
         expect(push).toBeCalledWith({

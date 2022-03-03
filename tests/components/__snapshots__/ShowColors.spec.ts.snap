@@ -1,42 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InitialInfo matches snapshot 1`] = `
+exports[`ShowColors matches snapshot 1`] = `
 <div>
   <div
     class="show-colors"
-    style="grid-template-columns: repeat(2, 1fr);"
   >
     <div
       class="show-colors__cell"
-      style="background-color: rgb(255, 255, 255); flex-grow: 1;"
+      style="background-color: rgb(255, 255, 255);"
     >
       <div
         class="show-colors__cell-description-box"
       >
-        <code
-          class="show-colors__cell-description"
-        >
-          
+        <code>
           FFF
-          
-          <br />
         </code>
       </div>
     </div>
     <div
       class="show-colors__cell"
-      style="background-color: rgb(255, 255, 0); flex-grow: 1;"
+      style="background-color: rgb(255, 255, 0);"
     >
       <div
         class="show-colors__cell-description-box"
       >
-        <code
-          class="show-colors__cell-description"
-        >
-          
+        <code>
           FF0
-          
-          <br />
         </code>
       </div>
     </div>
@@ -47,35 +36,11 @@ exports[`InitialInfo matches snapshot 1`] = `
       <div
         class="show-colors__cell-description-box"
       >
-        <code
-          class="show-colors__cell-description"
-        >
-          
+        <code>
           Share this palette
-          
-          <br />
         </code>
       </div>
     </div>
-  </div>
-   
-  <div
-    class="show-colors__footer"
-  >
-    <router-link-stub
-      class="show-colors__footer-link"
-      to="[object Object]"
-    >
-      Click here
-    </router-link-stub>
-    
-    to paste a new set of colors.
-    
-    <strong>
-      VLAVAAV
-    </strong>
-     © Alex L. Alves 2021.
-  
   </div>
 </div>
 `;
