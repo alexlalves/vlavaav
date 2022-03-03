@@ -32,7 +32,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class ShowColors extends Vue {
   @Prop(
     { required: false, type: String, default: () => '' },
-  ) readonly commaSeparatedColors!: string
+  ) readonly commaSeparatedColors!: string;
 
   get colors() {
     return this.commaSeparatedColors.split(',');
