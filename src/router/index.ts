@@ -16,6 +16,10 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/About.vue'),
   },
   {
+    path: '/palette',
+    redirect: { name: 'Home' },
+  },
+  {
     path: '/palette/:colors',
     name: 'Palette',
     props: true,
