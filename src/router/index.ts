@@ -25,6 +25,12 @@ const routes: Array<RouteConfig> = [
     props: true,
     component: () => import('../views/Palette.vue'),
   },
+  {
+    path: '/palette/:title/:colors',
+    name: 'TitledPalette',
+    props: true,
+    component: () => import('../views/Palette.vue'),
+  },
 ];
 
 const router = new VueRouter({

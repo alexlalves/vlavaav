@@ -6,6 +6,30 @@
       a color to copy it to your clipboard.
     </div>
 
+    <h1
+      v-if="showTitleNotInput"
+    >
+      {{ title }}
+    </h1>
+
+    <div
+      v-else
+      class="palette__name-input-box"
+    >
+      <input
+        class="palette__name-input"
+        type="text"
+        placeholder="Name your palette..."
+        v-model="paletteTitle"
+      />
+      <button
+        class="palette__name-input-button"
+        @click="namePalette"
+      >
+        OK
+      </button>
+    </div>
+
     <div class="palette__colors-wrapper">
       <ShowColors :commaSeparatedColors="colors"/>
     </div>
@@ -29,6 +53,24 @@ import ShowColors from '@/components/ShowColors.vue';
 })
 export default class Palette extends Vue {
   @Prop({ type: String, default: '' }) readonly colors!: string;
+
+  @Prop({ type: String, default: '' }) readonly title!: string;
+
+  private paletteTitle = '';
+
+  get showTitleNotInput() {
+    return this.$route.name === 'TitledPalette';
+  }
+
+  public namePalette() {
+    this.$router.push({
+      name: 'TitledPalette',
+      params: {
+        colors: this.colors,
+        title: this.paletteTitle,
+      },
+    });
+  }
 }
 </script>
 
