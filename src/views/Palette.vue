@@ -96,14 +96,63 @@ export default class Palette extends Vue {
   }
 }
 
-.palette__colors-wrapper {
-  margin: 16px;
-}
-
 .palette__header {
   background-color: #222;
   height: 2em;
   line-height: 2em;
+}
+
+.palette__name-input-box {
+  display: flex;
+  margin: 16px;
+  gap: 16px;
+  width: auto;
+  align-self: center;
+  box-sizing: border-box;
+
+  @media (min-width: 480px) {
+    gap: 32px;
+    max-width: 600px;
+  }
+}
+
+.palette__name-input-button {
+  background-color: #606060;
+  border: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 1.1em;
+  height: 48px;
+  width: 48px;
+  transition: 0.2s ease-in-out;
+  padding: 0;
+
+  &:hover {
+    background-color: #7a7a7a;
+  }
+}
+
+.palette__name-input {
+  background-color: #111111;
+  box-sizing: border-box;
+  border: 0;
+  color: #ffffff;
+  display: block;
+  font-size: 1.25em;
+  padding: 0.25em;
+  width: 100%;
+
+  font-size: 1.5em;
+  line-height: 1.25em;
+
+  @media (min-width: 480px) {
+    font-size: 1.5em;
+    // width: 600px;
+  }
+}
+
+.palette__colors-wrapper {
+  margin: 16px;
 }
 
 .palette__footer {
