@@ -106,7 +106,7 @@ export default class InitialInfo extends Vue { }
 }
 
 .initial-info__link {
-  color: #FFFFFF;
+  color: var(--text-color);
   display:inline-block;
 
   &:hover {

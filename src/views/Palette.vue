@@ -37,7 +37,7 @@
     <div class="palette__footer">
       <router-link :to="{name: 'Home'}" class="palette__footer-link">Click here</router-link>
       to paste a new set of colors.
-      <strong>VLAVAAV</strong> © Alex L. Alves 2021.
+      <strong>VLAVAAV</strong> © Alex L. Alves 2022.
     </div>
   </div>
 </template>
@@ -97,7 +97,7 @@ export default class Palette extends Vue {
 }
 
 .palette__header {
-  background-color: #222;
+  background-color: var(--light-background-color);
   height: 2em;
   line-height: 2em;
 }
@@ -117,7 +117,7 @@ export default class Palette extends Vue {
 }
 
 .palette__name-input-button {
-  background-color: #606060;
+  background-color: var(--button-color);
   border: none;
   box-sizing: border-box;
   color: #ffffff;
@@ -128,15 +128,15 @@ export default class Palette extends Vue {
   padding: 0;
 
   &:hover {
-    background-color: #7a7a7a;
+    background-color: var(--button-highlighted-color);
   }
 }
 
 .palette__name-input {
-  background-color: #111111;
+  background-color: var(--textarea-color);
   box-sizing: border-box;
   border: 0;
-  color: #ffffff;
+  color: var(--text-color);
   display: block;
   font-size: 1.25em;
   padding: 0.25em;
@@ -159,12 +159,11 @@ export default class Palette extends Vue {
   margin-top: auto;
   min-height: 2em;
   line-height: 2em;
-  background-color: #222;
-  color: #DDD;
+  background-color: var(--light-background-color);
 }
 
 .palette__footer-link {
-  color: #ffffff;
+  color: var(--text-color);
 
   &:hover {
     text-decoration: none;

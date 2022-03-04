@@ -71,7 +71,7 @@ export default class ShowColors extends Vue {
 }
 
 .show-colors__cell-description-box {
-  background-color: rgba(12, 12, 12, 0.8);
+  background-color: var(--alpha-overlay-background);
   font-size: 1.25em;
   padding: .5em;
   width: 100%;

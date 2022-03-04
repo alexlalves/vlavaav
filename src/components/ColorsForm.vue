@@ -63,9 +63,9 @@ export default class ColorsForm extends Vue {
 
 <style scoped lang="scss">
 .colors-form__input-area {
-  background-color: #111111;
+  background-color: var(--textarea-color);
   box-sizing: border-box;
-  color: #ffffff;
+  color: var(--text-color);
   display: block;
   font-size: 1.25em;
   line-height: 1.25em;
@@ -82,10 +82,10 @@ export default class ColorsForm extends Vue {
 }
 
 .colors-form__submit-button {
-  background-color: #606060;
+  background-color: var(--button-color);
   border: none;
   box-sizing: border-box;
-  color: #ffffff;
+  color: var(--text-color);
   cursor: pointer;
   font-size: 1.1em;
   margin-bottom: 0;
@@ -94,7 +94,7 @@ export default class ColorsForm extends Vue {
   width: 100%;
 
   &:hover {
-    background-color: #7a7a7a;
+    background-color: var(--button-highlighted-color);
   }
 }
 </style>
