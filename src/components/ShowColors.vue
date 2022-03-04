@@ -15,10 +15,10 @@
 
       <div
         @click="copyLinkToClipboard()"
-        class="show-colors__cell"
+        class="show-colors__cell show-colors__cell--share"
       >
-        <div class="show-colors__cell-description-box">
-          <code>Share this palette</code>
+        <div class="show-colors__cell-description-box show-colors__cell-description-box--share">
+          <code><strong>Share</strong> this palette</code>
         </div>
       </div>
     </div>
@@ -67,6 +67,14 @@ export default class ShowColors extends Vue {
   height: 160px;
   overflow: hidden;
 
+  &--share {
+    background: repeating-linear-gradient(
+      135deg,
+      var(--light-background-color), var(--light-background-color) 10px,
+      var(--text-color) 10px, var(--text-color) 20px
+    );
+  }
+
   &:hover {
     transform: scale(1.05);
   }
@@ -77,5 +85,9 @@ export default class ShowColors extends Vue {
   font-size: 1.25em;
   padding: .5em;
   width: 100%;
+
+  &--share {
+    background-color: var(--alpha-overlay-background-strong);
+  }
 }
 </style>
