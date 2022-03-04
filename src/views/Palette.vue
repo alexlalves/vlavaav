@@ -1,13 +1,14 @@
 <template>
   <div class="palette">
-    <div class="palette__header">
+    <!-- <div class="palette__menu-bar">
       <span class="palette__hide-mobile">Click</span>
       <span class="palette__show-mobile">Tap</span>
       a color to copy it to your clipboard.
-    </div>
+    </div> -->
 
     <h1
       v-if="showTitleNotInput"
+      class="palette__header"
     >
       {{ title }}
     </h1>
@@ -30,13 +31,31 @@
       </button>
     </div>
 
+    <p class="palette__introduction">
+      <span class="palette__hide-mobile">Click</span>
+      <span class="palette__show-mobile">Tap</span>
+      a color to copy it to your clipboard.<br/>
+
+      <a
+        @click="copyLinkToClipboard"
+        class="palette__link"
+      >Share this palette</a>
+
+      •
+
+      <router-link
+        :to="{name: 'Home'}"
+        class="palette__link"
+      >
+        Paste a new set of colors
+      </router-link>
+    </p>
+
     <div class="palette__colors-wrapper">
       <ShowColors :commaSeparatedColors="colors"/>
     </div>
 
     <div class="palette__footer">
-      <router-link :to="{name: 'Home'}" class="palette__footer-link">Click here</router-link>
-      to paste a new set of colors.
       <strong>VLAVAAV</strong> © Alex L. Alves 2022.
     </div>
   </div>
@@ -60,6 +79,14 @@ export default class Palette extends Vue {
 
   get showTitleNotInput() {
     return this.$route.name === 'TitledPalette';
+  }
+
+  public copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text);
+  }
+
+  public copyLinkToClipboard() {
+    this.copyToClipboard(document.URL);
   }
 
   public namePalette() {
@@ -97,11 +124,31 @@ export default class Palette extends Vue {
   }
 }
 
-.palette__header {
+.palette__menu-bar {
   background-color: var(--light-background-color);
   height: 2em;
   line-height: 2em;
   border-radius: 0 0 1em 1em;
+}
+
+.palette__header {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.palette__introduction {
+  line-height: 1.25em;
+  margin: 0px 16px 16px;
+}
+
+.palette__link {
+  color: var(--text-color);
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .palette__name-input-box {
@@ -163,13 +210,5 @@ export default class Palette extends Vue {
   line-height: 2em;
   background-color: var(--light-background-color);
   border-radius: 1em 1em 0 0 ;
-}
-
-.palette__footer-link {
-  color: var(--text-color);
-
-  &:hover {
-    text-decoration: none;
-  }
 }
 </style>
