@@ -61,9 +61,11 @@ export default class ShowColors extends Vue {
 
 .show-colors__cell {
   align-items: flex-end;
+  border-radius: 16px;
   cursor: pointer;
   display: flex;
   height: 160px;
+  overflow: hidden;
 
   &:hover {
     transform: scale(1.05);

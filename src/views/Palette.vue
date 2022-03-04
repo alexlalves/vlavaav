@@ -78,6 +78,7 @@ export default class Palette extends Vue {
 .palette {
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
   min-height: 100vh;
   width: 100%;
 }
@@ -100,6 +101,7 @@ export default class Palette extends Vue {
   background-color: var(--light-background-color);
   height: 2em;
   line-height: 2em;
+  border-radius: 0 0 1em 1em;
 }
 
 .palette__name-input-box {
@@ -152,7 +154,7 @@ export default class Palette extends Vue {
 }
 
 .palette__colors-wrapper {
-  margin: 16px;
+  margin: 32px 16px;
 }
 
 .palette__footer {
@@ -160,6 +162,7 @@ export default class Palette extends Vue {
   min-height: 2em;
   line-height: 2em;
   background-color: var(--light-background-color);
+  border-radius: 1em 1em 0 0 ;
 }
 
 .palette__footer-link {
