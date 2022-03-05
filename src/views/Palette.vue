@@ -7,16 +7,22 @@
     </div> -->
 
     <h1
-      v-if="showTitleNotInput"
+      v-if="showTitle"
       class="palette__header"
     >
       {{ title }}
     </h1>
 
     <div
-      v-else
+      v-else-if="showNameInput"
       class="palette__name-input-wrapper"
     >
+      <v-button
+        @click="closeNameInput"
+        class="palette__name-input-close"
+      >
+        ×
+      </v-button>
       <input
         class="palette__name-input-area"
         type="text"
@@ -79,8 +85,12 @@ export default class Palette extends Vue {
 
   private paletteTitle = '';
 
-  get showTitleNotInput() {
-    return this.$route.name === 'TitledPalette';
+  get showTitle() {
+    return this.$route.name === 'TitledPalette' && this.title !== 'null';
+  }
+
+  get showNameInput() {
+    return this.title !== 'null';
   }
 
   public copyToClipboard(text: string) {
@@ -102,15 +112,27 @@ export default class Palette extends Vue {
       },
     });
   }
+
+  public closeNameInput() {
+    this.$router.push({
+      name: 'TitledPalette',
+      params: {
+        colors: this.colors,
+        title: 'null',
+      },
+    });
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .palette {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
   min-height: 100vh;
+  padding-top: 32px;
   width: 100%;
 }
 
@@ -136,7 +158,7 @@ export default class Palette extends Vue {
 }
 
 .palette__header {
-  margin-top: 32px;
+  margin-top: 0;
   margin-bottom: 16px;
 }
 
@@ -160,13 +182,21 @@ export default class Palette extends Vue {
   box-sizing: border-box;
   display: flex;
   gap: 16px;
-  padding: 16px;
+  padding: 0 16px 16px ;
+  position: relative;
   width: 100%;
   max-width: 600px;
 
   @media (min-width: 480px) {
     gap: 24px;
   }
+}
+
+.palette__name-input-close {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  font-size: 0.5em;
 }
 
 .palette__name-input-area {
