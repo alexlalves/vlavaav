@@ -15,20 +15,20 @@
 
     <div
       v-else
-      class="palette__name-input-box"
+      class="palette__name-input-wrapper"
     >
       <input
-        class="palette__name-input"
+        class="palette__name-input-area"
         type="text"
         placeholder="Name your palette..."
         v-model="paletteTitle"
       />
-      <button
+      <v-button
         class="palette__name-input-button"
         @click="namePalette"
       >
         OK
-      </button>
+      </v-button>
     </div>
 
     <p class="palette__introduction">
@@ -64,10 +64,12 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import ShowColors from '@/components/ShowColors.vue';
+import VButton from '@/components/VButton.vue';
 
 @Component({
   components: {
     ShowColors,
+    VButton,
   },
 })
 export default class Palette extends Vue {
@@ -151,52 +153,34 @@ export default class Palette extends Vue {
   }
 }
 
-.palette__name-input-box {
-  display: flex;
-  margin: 16px;
-  gap: 16px;
-  width: auto;
+.palette__name-input-wrapper {
   align-self: center;
   box-sizing: border-box;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  width: 100%;
+  max-width: 600px;
 
   @media (min-width: 480px) {
-    gap: 32px;
-    max-width: 600px;
+    gap: 24px;
   }
 }
 
-.palette__name-input-button {
-  background-color: var(--button-color);
-  border: none;
-  box-sizing: border-box;
-  color: #ffffff;
-  font-size: 1.1em;
-  height: 48px;
-  width: 48px;
-  transition: 0.2s ease-in-out;
-  padding: 0;
-
-  &:hover {
-    background-color: var(--button-highlighted-color);
-  }
-}
-
-.palette__name-input {
+.palette__name-input-area {
   background-color: var(--textarea-color);
   box-sizing: border-box;
   border: 0;
+  border-radius: 8px;
   color: var(--text-color);
   display: block;
   font-size: 1.25em;
+  line-height: 1.25em;
   padding: 0.25em;
   width: 100%;
 
-  font-size: 1.5em;
-  line-height: 1.25em;
-
   @media (min-width: 480px) {
     font-size: 1.5em;
-    // width: 600px;
   }
 }
 
