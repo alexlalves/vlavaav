@@ -92,6 +92,8 @@ export default class Palette extends Vue {
   }
 
   public namePalette() {
+    if (!this.paletteTitle) return;
+
     this.$router.push({
       name: 'TitledPalette',
       params: {
