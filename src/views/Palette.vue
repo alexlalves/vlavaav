@@ -92,7 +92,7 @@ export default class Palette extends Vue {
   }
 
   get titleToShow() {
-    return this.title || this.$route.query.title;
+    return decodeURI(this.title || this.$route.query.title as string || '');
   }
 
   get showTitle() {
@@ -116,7 +116,7 @@ export default class Palette extends Vue {
 
     this.$router.replace({
       query: {
-        title: this.paletteTitle,
+        title: encodeURI(this.paletteTitle),
         ...this.$router.currentRoute.query,
       },
     });
