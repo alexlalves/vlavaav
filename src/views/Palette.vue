@@ -10,7 +10,7 @@
       v-if="showTitle"
       class="palette__header"
     >
-      {{ title }}
+      {{ titleToShow }}
     </h1>
 
     <div
@@ -58,7 +58,7 @@
     </p>
 
     <div class="palette__colors-wrapper">
-      <ShowColors :commaSeparatedColors="colors"/>
+      <ShowColors :commaSeparatedColors="colorsToShow"/>
     </div>
 
     <div class="palette__footer">
@@ -79,18 +79,28 @@ import VButton from '@/components/VButton.vue';
   },
 })
 export default class Palette extends Vue {
-  @Prop({ type: String, default: '' }) readonly colors!: string;
+  @Prop({ type: String, default: '', required: false }) readonly colors!: string;
 
   @Prop({ type: String, default: '' }) readonly title!: string;
 
+  @Prop({ type: String, default: '' }) readonly palette!: string;
+
   private paletteTitle = '';
 
+  get colorsToShow() {
+    return this.colors || this.$route.query.colors;
+  }
+
+  get titleToShow() {
+    return this.title || this.$route.query.title;
+  }
+
   get showTitle() {
-    return this.$route.name === 'TitledPalette' && this.title !== 'null';
+    return this.titleToShow && this.titleToShow !== 'null';
   }
 
   get showNameInput() {
-    return this.title !== 'null';
+    return this.titleToShow !== 'null';
   }
 
   public copyToClipboard(text: string) {
@@ -104,21 +114,19 @@ export default class Palette extends Vue {
   public namePalette() {
     if (!this.paletteTitle) return;
 
-    this.$router.push({
-      name: 'TitledPalette',
-      params: {
-        colors: this.colors,
+    this.$router.replace({
+      query: {
         title: this.paletteTitle,
+        ...this.$router.currentRoute.query,
       },
     });
   }
 
   public closeNameInput() {
-    this.$router.push({
-      name: 'TitledPalette',
-      params: {
-        colors: this.colors,
+    this.$router.replace({
+      query: {
         title: 'null',
+        ...this.$router.currentRoute.query,
       },
     });
   }
@@ -195,7 +203,6 @@ export default class Palette extends Vue {
 .palette__name-input-close {
   position: absolute;
   top: -8px;
-  left: 8px;
   font-size: 0.5em;
 }
 
@@ -208,6 +215,7 @@ export default class Palette extends Vue {
   display: block;
   font-size: 1.25em;
   line-height: 1.25em;
+  margin-left: 8px;
   padding: 0.25em;
   width: 100%;
 
