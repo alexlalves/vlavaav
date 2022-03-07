@@ -1,6 +1,24 @@
 import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
+import VueRouter, { NavigationGuardNext, Route, RouteConfig } from 'vue-router';
+import SamplePalettes from '@/assets/sample_palettes';
+
+const paletteRoutes = Object.values(SamplePalettes)
+  .map(palette => ({
+    path: `/palette/${palette}`,
+    name: `Palette-${palette}`,
+    props: {
+      palette,
+    },
+    component: () => import('../views/SamplePalette.vue'),
+  }));
+
+const noColorsRedirect = (to: Route, from: Route, next: NavigationGuardNext<Vue>) => {
+  if (to.query.colors) {
+    next();
+  } else {
+    next({ name: 'Home' });
+  }
+};
 
 Vue.use(VueRouter);
 
@@ -8,7 +26,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('../views/Home.vue'),
   },
   {
     path: '/about',
@@ -17,19 +35,15 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/palette',
-    redirect: { name: 'Home' },
-  },
-  {
-    path: '/palette/:colors',
     name: 'Palette',
     props: true,
     component: () => import('../views/Palette.vue'),
+    beforeEnter: noColorsRedirect,
   },
+  ...paletteRoutes,
   {
-    path: '/palette/:title/:colors',
-    name: 'TitledPalette',
-    props: true,
-    component: () => import('../views/Palette.vue'),
+    path: '/palette/:nonexistent',
+    redirect: { name: 'Home' },
   },
 ];
 

@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/camelcase */
 export default {
-  VLAVAAV: 'vlavaav',
+  ALL_MATERIAL_DESIGN: 'material',
+  ATARI_2600: 'atari-2600',
+  BOOTSTRAP: 'bootstrap',
   CGA: 'cga',
-  COMMODORE: 'commodore64',
-  WEBSAFE: 'websafe_colors',
-  ZX_SPECTRUM: 'zx_spectrum',
+  COMMODORE: 'commodore-64',
+  HTML_COLORS: 'html-names',
+  VLAVAAV: 'vlavaav',
+  WEBSAFE: 'websafe-colors',
+  ZX_SPECTRUM: 'zx-spectrum',
 };
