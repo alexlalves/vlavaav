@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d230849"],{ed2f:function(a){a.exports=JSON.parse('{"name":"CGA color palette","colors":["000000","555555","0000aa","5555ff","00aa00","55ff55","00aaaa","55ffff","aa0000","ff5555","aa00aa","ff55ff","aa5500","ffff55","aaaaaa","ffffff"]}')}}]);
+//# sourceMappingURL=chunk-2d230849.66f0b354.js.map

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21e044"],{d486:function(f){f.exports=JSON.parse('{"name":"ZX Spectrum colors","colors":["000000","0000d7","0000ff","d70000","ff0000","d700d7","ff00ff","00d700","00ff00","00d7d7","00ffff","d7d700","ffff00","d7d7d7","ffffff"]}')}}]);
+//# sourceMappingURL=chunk-2d21e044.3439502f.js.map

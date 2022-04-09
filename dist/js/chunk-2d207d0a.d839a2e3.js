@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d207d0a"],{a1ae:function(o){o.exports=JSON.parse('{"name":"Commodore 64 color palette","colors":["000000","8b5429","ffffff","574200","883932","b86962","67b6bd","505050","8b3f96","787878","55a049","94e089","40318d","7869c4","bfce72","9f9f9f"]}')}}]);
+//# sourceMappingURL=chunk-2d207d0a.d839a2e3.js.map
