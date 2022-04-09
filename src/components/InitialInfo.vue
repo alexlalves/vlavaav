@@ -38,9 +38,9 @@
       Check the project out on GitHub:
       <a
         class="initial-info__link"
-        href="https://github.com/Magmagan/vlavaav"
+        href="https://github.com/alexlalves/vlavaav"
       >
-        https://github.com/Magmagan/vlavaav
+        https://github.com/alexlalves/vlavaav
       </a>
     </p>
   </div>
