@@ -33,80 +33,80 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
 import SAMPLE_PALETTES from '@/assets/sample_palettes';
 import VButton from '@/components/VButton.vue';
 
-@Component({
+export default {
   components: {
     VButton,
   },
-})
-export default class ColorsForm extends Vue {
-  private exampleText = [
-    'Paste here your colors and click \'Generate\'.',
-    'Example input:',
-    '',
-    'V: #ff0000,',
-    'L: #ff8800,',
-    'A: #ffff00,',
-    'V: #00ff00,',
-    'A: #0000ff,',
-    'A: #8800ff,',
-    'V: #ff00ff.',
-  ].join('\n');
+  data() {
+    const exampleText = [
+      'Paste here your colors and click \'Generate\'.',
+      'Example input:',
+      '',
+      'V: #ff0000,',
+      'L: #ff8800,',
+      'A: #ffff00,',
+      'V: #00ff00,',
+      'A: #0000ff,',
+      'A: #8800ff,',
+      'V: #ff00ff.',
+    ].join('\n');
 
-  private errorMessageToShow = '';
+    return {
+      exampleText,
+      errorMessageToShow: '',
+      pastedInfo: '',
+    };
+  },
+  methods: {
+    submitGenerate() {
+      const {
+        pastedInfo,
+        $router,
+        findColors,
+      } = this;
 
-  private pastedInfo = '';
+      if (!pastedInfo) {
+        $router.push({
+          name: `Palette-${SAMPLE_PALETTES.VLAVAAV}`,
+        });
+      }
 
-  public submitGenerate() {
-    const {
-      pastedInfo,
-      $router,
-      findColors,
-    } = this;
+      const colors = findColors(pastedInfo);
 
-    if (!pastedInfo) {
-      $router.push({
-        name: `Palette-${SAMPLE_PALETTES.VLAVAAV}`,
+      if (colors.length) {
+        $router.push({
+          name: 'Palette',
+          query: { colors },
+        });
+      } else {
+        this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the submitted text.';
+      }
+    },
+    findColors(pastedText: string): string {
+      const colors = pastedText.match(/(?:#)[0-9a-fA-F]{6}/g) || [];
+
+      return [...new Set(
+        colors.map(color => color.toLowerCase().replace('#', '')),
+      )].join(',');
+    },
+    submitRandom() {
+      const allPalettes = Object.values(SAMPLE_PALETTES);
+
+      const randomPalette = allPalettes[
+        Math.floor(
+          allPalettes.length * Math.random(),
+        )
+      ];
+
+      this.$router.push({
+        name: `Palette-${randomPalette}`,
       });
-    }
-
-    const colors = findColors(pastedInfo);
-
-    if (colors.length) {
-      $router.push({
-        name: 'Palette',
-        query: { colors },
-      });
-    } else {
-      this.errorMessageToShow = 'No colors of the #RRGGBB format were found in the submitted text.';
-    }
-  }
-
-  public submitRandom() {
-    const allPalettes = Object.values(SAMPLE_PALETTES);
-
-    const randomPalette = allPalettes[
-      Math.floor(
-        allPalettes.length * Math.random(),
-      )
-    ];
-
-    this.$router.push({
-      name: `Palette-${randomPalette}`,
-    });
-  }
-
-  public findColors(pastedText: string): string {
-    const colors = pastedText.match(/(?:#)[0-9a-fA-F]{6}/g) || [];
-
-    return [...new Set(
-      colors.map(color => color.toLowerCase().replace('#', '')),
-    )].join(',');
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
