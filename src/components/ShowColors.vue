@@ -5,7 +5,7 @@
         v-for="color in colors"
         :key="color"
         :style="`background-color: #${color};`"
-        @click="copyToClipboard(color)"
+        @click="copyToClipboard(`#${color}`)"
         class="show-colors__cell"
       >
         <div class="show-colors__cell-description-box">
@@ -26,26 +26,27 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-
-@Component
-export default class ShowColors extends Vue {
-  @Prop(
-    { required: false, type: String, default: () => '' },
-  ) readonly commaSeparatedColors!: string;
-
-  get colors() {
-    return this.commaSeparatedColors.split(',');
-  }
-
-  public copyToClipboard(text: string) {
-    navigator.clipboard.writeText(text);
-  }
-
-  public copyLinkToClipboard() {
-    this.copyToClipboard(document.URL);
-  }
-}
+export default {
+  props: {
+    commaSeparatedColors: {
+      type: String,
+      default: '',
+    },
+  },
+  computed: {
+    colors() {
+      return this.commaSeparatedColors.split(',');
+    },
+  },
+  methods: {
+    copyToClipboard(text: string) {
+      navigator.clipboard.writeText(text);
+    },
+    copyLinkToClipboard() {
+      this.copyToClipboard(document.URL);
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
