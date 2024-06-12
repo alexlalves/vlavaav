@@ -33,7 +33,7 @@
     </p>
 
     <p class="initial-info__paragraph initial-info__paragraph--no-justify">
-      <strong>VLAVAAV</strong> © Alex L. Alves 2022.
+      <strong>VLAVAAV</strong> © Alex L. Alves {{ new Date().getFullYear() }}.
       <br/>
       Check the project out on GitHub:
       <a

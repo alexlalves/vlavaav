@@ -62,7 +62,7 @@
     </div>
 
     <div class="palette__footer">
-      <strong>VLAVAAV</strong> © Alex L. Alves 2022.
+      <strong>VLAVAAV</strong> © Alex L. Alves {{ new Date().getFullYear() }}.
     </div>
   </div>
 </template>
