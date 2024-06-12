@@ -13,7 +13,7 @@ exports[`ShowColors matches snapshot 1`] = `
         class="show-colors__cell-description-box"
       >
         <code>
-          FFF
+          #FFF
         </code>
       </div>
     </div>
@@ -25,19 +25,22 @@ exports[`ShowColors matches snapshot 1`] = `
         class="show-colors__cell-description-box"
       >
         <code>
-          FF0
+          #FF0
         </code>
       </div>
     </div>
      
     <div
-      class="show-colors__cell"
+      class="show-colors__cell show-colors__cell--share"
     >
       <div
-        class="show-colors__cell-description-box"
+        class="show-colors__cell-description-box show-colors__cell-description-box--share"
       >
         <code>
-          Share this palette
+          <strong>
+            Share
+          </strong>
+           this palette
         </code>
       </div>
     </div>

@@ -6,8 +6,8 @@ exports[`ColorsForm matches snapshot 1`] = `
    
   <textarea
     class="colors-form__input-area"
-    placeholder="Paste here or just click 'Generate'
-and see these colors in action:
+    placeholder="Paste here your colors and click 'Generate'.
+Example input:
 
 V: #ff0000,
 L: #ff8800,
@@ -18,13 +18,28 @@ A: #8800ff,
 V: #ff00ff."
   />
    
-  <button
-    class="colors-form__submit-button"
-    type="submit"
+  <div
+    class="colors-form__button-container"
   >
+    <v-button-stub
+      class="colors-form__submit-button"
+      type="submit"
+      value="generate"
+    >
+      
+      Generate
     
-    Generate
-  
-  </button>
+    </v-button-stub>
+     
+    <v-button-stub
+      class="colors-form__submit-button colors-form__submit-button--random"
+      type="submit"
+      value="random"
+    >
+      
+      Surprise me!
+    
+    </v-button-stub>
+  </div>
 </form>
 `;
