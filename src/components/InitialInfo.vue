@@ -47,15 +47,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
 import ColorsForm from '@/components/ColorsForm.vue';
 
-@Component({
+export default {
   components: {
     ColorsForm,
   },
-})
-export default class InitialInfo extends Vue { }
+};
 </script>
 
 <style scoped lang="scss">
