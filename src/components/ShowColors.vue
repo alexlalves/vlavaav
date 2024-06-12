@@ -9,7 +9,7 @@
         class="show-colors__cell"
       >
         <div class="show-colors__cell-description-box">
-          <code>{{ color }}</code>
+          <code>#{{ color }}</code>
         </div>
       </div>
 
