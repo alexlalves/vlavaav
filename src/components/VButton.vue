@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="`v-button ${variantClass}`"
+    class="v-button"
     v-on="$listeners"
   >
     <slot></slot>
@@ -8,17 +8,8 @@
 </template>
 
 <script lang="ts">
-import { Prop, Vue } from 'vue-property-decorator';
-
-export default class Palette extends Vue {
-  @Prop({ type: String, default: '' }) readonly variant!: string;
-
-  get variantClass() {
-    const { variant } = this;
-
-    return variant && `v-button--${variant}`;
-  }
-}
+export default {
+};
 </script>
 
 <style scoped lang="scss">
