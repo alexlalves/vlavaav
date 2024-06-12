@@ -60,9 +60,9 @@ describe('ColorsForm', () => {
     beforeEach(() => {
       get('wrapper').setData({
         pastedInfo: get('userInput'),
-        samplePalette: '#ff00ff',
       });
-      get('wrapper').vm.formSubmit();
+
+      get('wrapper').vm.submitGenerate();
     });
 
     describe('when no user input has been provided', () => {
@@ -70,7 +70,7 @@ describe('ColorsForm', () => {
 
       it('accesses the Palette view with the default colors', () => {
         expect(push).toBeCalledWith({
-          name: 'Palette', params: { colors: 'ff00ff' },
+          name: 'Palette-vlavaav',
         });
       });
     });
@@ -89,7 +89,7 @@ describe('ColorsForm', () => {
 
       it('accesses the Palette view with the provided colors', () => {
         expect(push).toBeCalledWith({
-          name: 'Palette', params: { colors: 'abcdef' },
+          name: 'Palette', query: { colors: 'abcdef' },
         });
       });
     });
