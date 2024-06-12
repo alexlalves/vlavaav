@@ -64,7 +64,7 @@ export default class ColorsForm extends Vue {
     const {
       pastedInfo,
       $router,
-      findColors
+      findColors,
     } = this;
 
     if (!pastedInfo) {
@@ -75,7 +75,7 @@ export default class ColorsForm extends Vue {
 
     const colors = findColors(pastedInfo);
 
-    if(colors.length) {
+    if (colors.length) {
       $router.push({
         name: 'Palette',
         query: { colors },
@@ -90,7 +90,7 @@ export default class ColorsForm extends Vue {
 
     const randomPalette = allPalettes[
       Math.floor(
-        allPalettes.length * Math.random()
+        allPalettes.length * Math.random(),
       )
     ];
 
