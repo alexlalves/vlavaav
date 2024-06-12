@@ -68,69 +68,74 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
 import ShowColors from '@/components/ShowColors.vue';
 import VButton from '@/components/VButton.vue';
 
-@Component({
+export default {
   components: {
     ShowColors,
     VButton,
   },
-})
-export default class Palette extends Vue {
-  @Prop({ type: String, default: '', required: false }) readonly colors!: string;
+  props: {
+    colors: {
+      type: String,
+      default: '',
+    },
+    title: {
+      type: String,
+      default: '',
+    },
+    palette: {
+      type: String,
+      default: '',
+    },
+  },
+  data() {
+    return {
+      paletteTitle: '',
+    };
+  },
+  computed: {
+    colorsToShow() {
+      return this.colors || this.$route.query.colors;
+    },
+    titleToShow() {
+      return decodeURI(this.title || this.$route.query.title as string || '');
+    },
+    showTitle() {
+      return this.titleToShow && this.titleToShow !== 'null';
+    },
+    showNameInput() {
+      return this.titleToShow !== 'null';
+    },
+  },
+  methods: {
+    copyToClipboard(text: string) {
+      navigator.clipboard.writeText(text);
+    },
+    copyLinkToClipboard() {
+      this.copyToClipboard(document.URL);
+    },
+    namePalette() {
+      if (!this.paletteTitle) return;
 
-  @Prop({ type: String, default: '' }) readonly title!: string;
-
-  @Prop({ type: String, default: '' }) readonly palette!: string;
-
-  private paletteTitle = '';
-
-  get colorsToShow() {
-    return this.colors || this.$route.query.colors;
-  }
-
-  get titleToShow() {
-    return decodeURI(this.title || this.$route.query.title as string || '');
-  }
-
-  get showTitle() {
-    return this.titleToShow && this.titleToShow !== 'null';
-  }
-
-  get showNameInput() {
-    return this.titleToShow !== 'null';
-  }
-
-  public copyToClipboard(text: string) {
-    navigator.clipboard.writeText(text);
-  }
-
-  public copyLinkToClipboard() {
-    this.copyToClipboard(document.URL);
-  }
-
-  public namePalette() {
-    if (!this.paletteTitle) return;
-
-    this.$router.replace({
-      query: {
-        title: encodeURI(this.paletteTitle),
-        ...this.$router.currentRoute.query,
-      },
-    });
-  }
-
-  public closeNameInput() {
-    this.$router.replace({
-      query: {
-        title: 'null',
-        ...this.$router.currentRoute.query,
-      },
-    });
-  }
-}
+      this.$router.replace({
+        query: {
+          title: encodeURI(this.paletteTitle),
+          ...this.$router.currentRoute.query,
+        },
+      });
+    },
+    closeNameInput() {
+      this.$router.replace({
+        query: {
+          title: 'null',
+          ...this.$router.currentRoute.query,
+        },
+      });
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
