@@ -33,8 +33,8 @@
 </template>
 
 <script lang="ts">
-import SAMPLE_PALETTES from '@/assets/sample_palettes';
-import VButton from '@/components/VButton.vue';
+import SAMPLE_PALETTES from '../assets/sample_palettes';
+import VButton from '../components/VButton.vue';
 
 export default {
   components: {

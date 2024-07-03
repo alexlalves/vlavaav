@@ -68,8 +68,8 @@
 </template>
 
 <script lang="ts">
-import ShowColors from '@/components/ShowColors.vue';
-import VButton from '@/components/VButton.vue';
+import ShowColors from '../components/ShowColors.vue';
+import VButton from '../components/VButton.vue';
 
 export default {
   components: {

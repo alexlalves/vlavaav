@@ -1,7 +1,7 @@
 <template>
-  <div id="app" data-theme="dark">
-    <router-view/>
-  </div>
+  <!-- <div id="app" data-theme="dark"> -->
+    <RouterView/>
+  <!-- </div> -->
 </template>
 
 <style lang="scss">

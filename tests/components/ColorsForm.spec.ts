@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import ColorsForm from '@/components/ColorsForm.vue';
+import ColorsForm from '../components/ColorsForm.vue';
 
 const push = jest.fn();
 

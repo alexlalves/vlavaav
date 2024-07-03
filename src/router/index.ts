@@ -1,6 +1,10 @@
-import Vue from 'vue';
-import VueRouter, { NavigationGuardNext, Route, RouteConfig } from 'vue-router';
-import SamplePalettes from '@/assets/sample_palettes';
+import {
+  createRouter,
+  NavigationGuardNext,
+  Route, RouteConfig,
+  createMemoryHistory,
+} from 'vue-router';
+import SamplePalettes from '../assets/sample_palettes';
 
 const paletteRoutes = Object.values(SamplePalettes)
   .map(palette => ({
@@ -12,15 +16,13 @@ const paletteRoutes = Object.values(SamplePalettes)
     component: () => import('../views/SamplePalette.vue'),
   }));
 
-const noColorsRedirect = (to: Route, from: Route, next: NavigationGuardNext<Vue>) => {
+const noColorsRedirect = (to: Route, from: Route, next: NavigationGuardNext) => {
   if (to.query.colors) {
     next();
   } else {
     next({ name: 'Home' });
   }
 };
-
-Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
@@ -47,15 +49,16 @@ const routes: Array<RouteConfig> = [
   },
 ];
 
-const router = new VueRouter({
+const router = createRouter({
   routes,
-  scrollBehavior(to, from, savedPosition) {
-    if (from.name === 'Palette' && to.name === 'TitledPalette') {
-      return savedPosition;
-    }
+  history: createMemoryHistory(),
+  // scrollBehavior(to, from, savedPosition) {
+  //   if (from.name === 'Palette' && to.name === 'TitledPalette') {
+  //     return savedPosition;
+  //   }
 
-    return { x: 0, y: 0 };
-  },
+  //   return { x: 0, y: 0 };
+  // },
 });
 
 export default router;

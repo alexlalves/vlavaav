@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import ShowColors from '@/components/ShowColors.vue';
+import ShowColors from '../components/ShowColors.vue';
 
 describe('ShowColors', () => {
   def('colors', () => 'FFF,FF0');

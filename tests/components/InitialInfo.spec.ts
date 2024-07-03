@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import InitialInfo from '@/components/InitialInfo.vue';
+import InitialInfo from '../components/InitialInfo.vue';
 
 describe('InitialInfo', () => {
   def('wrapper', () => shallowMount(InitialInfo));

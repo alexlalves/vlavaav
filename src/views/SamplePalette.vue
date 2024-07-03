@@ -6,8 +6,8 @@
 </template>
 
 <script lang="ts">
-import SamplePalettes from '@/assets/sample_palettes';
-import Palette from '@/views/Palette.vue';
+import SamplePalettes from '../assets/sample_palettes';
+import Palette from '../views/Palette.vue';
 
 export default {
   components: {

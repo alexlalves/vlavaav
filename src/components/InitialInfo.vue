@@ -3,7 +3,7 @@
     <img
       class="initial-info__logo"
       alt="VLAVAAV logo"
-      src="@/assets/logo.svg"
+      src="../assets/logo.svg"
     >
 
     <h1 class="initial-info__header">
@@ -47,7 +47,7 @@
 </template>
 
 <script lang="ts">
-import ColorsForm from '@/components/ColorsForm.vue';
+import ColorsForm from '../components/ColorsForm.vue';
 
 export default {
   components: {
